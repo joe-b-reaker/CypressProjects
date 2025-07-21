@@ -11,6 +11,9 @@
     "parabank-suite-headed": "npx cypress run --spec 'cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js' --browser chrome --headed",
     "parabank-suite-headless": "npx cypress run --spec 'cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js'",
     "parabank-all-headed": "npx cypress run --spec 'cypress/e2e/TestCases/ParaBankRegistration.cy.js,cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js' --browser chrome --headed",
-    "parabank-all-headless": "npx cypress run --spec 'cypress/e2e/TestCases/ParaBankRegistration.cy.js,cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js'"
+    "parabank-all-headless": "npx cypress run --spec 'cypress/e2e/TestCases/ParaBankRegistration.cy.js,cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js'",
+    "parabank-pom-commands" : "npx cypress run --spec 'cypress/e2e/TestCases/ParabankOpenNewAccountPOM.cy.js' --browser chrome --headed",
+    "parabank-pom-commands-headless" : "npx cypress run --spec 'cypress/e2e/TestCases/ParabankOpenNewAccountPOM.cy.js'"
+
 }
 }

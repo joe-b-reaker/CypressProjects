@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "cypress-downloadfile": "^1.2.4",
+    "cypress-mochawesome-reporter": "^4.0.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "cypress-plugin-api": "^2.11.2"
+  },
+   "scripts": {
+    "parabank-suite-headed": "npx cypress run --spec 'cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js' --browser chrome --headed",
+    "parabank-suite-headless": "npx cypress run --spec 'cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js'",
+    "parabank-all-headed": "npx cypress run --spec 'cypress/e2e/TestCases/ParaBankRegistration.cy.js,cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js' --browser chrome --headed",
+    "parabank-all-headless": "npx cypress run --spec 'cypress/e2e/TestCases/ParaBankRegistration.cy.js,cypress/e2e/TestCases/ParabankRegistrationFaker.cy.js'"
+}
+}

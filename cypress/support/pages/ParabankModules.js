@@ -141,15 +141,26 @@ class ParabankModules{
         transactionIdErrorLabel = 'span[id="transactionIdError"]';
         
         //button
-        findByIdButton = 'input[id="findById"]';
-        findByDateButton ='input[id="findByDate"]';
-        findByDateRangeButton ='input[id="findByDateRange"]';
-        findByAmountRange = 'input[id="findByAmount"]';
-
+        findByIdButton = '#findById';
+        findByDateButton ='#findByDate';
+        findByDateRangeButton ='#findByDateRange';
+        findByAmountRange = '#findByAmount';
         
         //link
-        
 
+        //Transaction Details 
+
+        //labels 
+        transactionIDLabel = '#rightPanel > table > tbody > tr:nth-child(1) > td:nth-child(2)';
+        transactionDateLabel = '#rightPanel > table > tbody > tr:nth-child(2) > td:nth-child(2)';
+        transactionDescriptionLabel = '#rightPanel > table > tbody > tr:nth-child(3) > td:nth-child(2)';
+        transactionTypeLabel = '#rightPanel > table > tbody > tr:nth-child(4) > td:nth-child(2)';
+        transactionAmountLabel = '#rightPanel > table > tbody > tr:nth-child(5) > td:nth-child(2)';
+        //link
+        transactionLink='#transactionTable > tbody > tr:nth-child(1) > td:nth-child(2) > a';
+        transactionResultLink = '#transactionBody > tr:nth-child(1) > td:nth-child(2) > a';
+        
+        
 
  clearEntryFields(){
     cy.get(this.firstNameText).clear();

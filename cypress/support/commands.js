@@ -82,6 +82,44 @@ Cypress.Commands.add('updateUserProfile',(user)=>{
 
 })
 
+Cypress.Commands.add( 'getTransactionDetails', (transactionDetails)=>{
+        cy.contains('Accounts Overview').click();
+       cy.get(module.accountLink).should('be.visible').click();
+       cy.get(module.transactionLink).should('be.visible').click();
+       cy.get(module.transactionIDLabel).invoke('text').then(text => {
+         transactionDetails.transactionID = text.trim();
+       });
+
+       cy.get(module.transactionDateLabel).invoke('text').then(text => {
+         transactionDetails.transactionDate = text.trim();
+       });
+
+       cy.get(module.transactionDescriptionLabel).invoke('text').then(text => {
+         transactionDetails.transactionDescription = text.trim();``
+       });
+
+       cy.get(module.transactionTypeLabel).invoke('text').then(text => {
+         transactionDetails.transactionType = text.trim();
+       });
+
+       cy.get(module.transactionAmountLabel).invoke('text').then(text => {
+         transactionDetails.transactionAmount = text.trim();
+       });
+       return cy.wrap(transactionDetails);
+
+})
+
+Cypress.Commands.add('verifyTransactionDetails',(transactionDetails)=>{
+        cy.get(module.transactionResultLink).should('be.visible').click();
+        cy.wait(2000);  
+        cy.get(module.transactionIDLabel).should('be.visible').and('contain',transactionDetails.transactionID);
+        cy.get(module.transactionDateLabel).should('be.visible').and('contain',transactionDetails.transactionDate);
+        cy.get(module.transactionDescriptionLabel).should('be.visible').and('contain',transactionDetails.transactionDescription);
+        cy.get(module.transactionTypeLabel).should('be.visible').and('contain',transactionDetails.transactionType);
+        cy.get(module.transactionAmountLabel).should('be.visible').and('contain',transactionDetails.transactionAmount);
+        return cy.wrap(transactionDetails);
+})
+
 Cypress.Commands.add('updateUserProfileclear',() =>{
         cy.contains('Update Contact Info').click();
         cy.wait(2000);

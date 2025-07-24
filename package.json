@@ -8,6 +8,7 @@
     "cypress-plugin-api": "^2.11.2"
   },
    "scripts": {
+    "orange-live-suite" : "npx cypress run --spec 'cypress/e2e/TestCase/OrangeLive.cy.js' --browser chrome --headed",
     "parabank-suite-headed": "npx cypress run --spec 'cypress/e2e/TestCase/ParabankRegistrationFaker.cy.js' --browser chrome --headed",
     "parabank-suite-headless": "npx cypress run --spec 'cypress/e2e/TestCase/ParabankRegistrationFaker.cy.js'",
     "parabank-all-headed": "npx cypress run --spec 'cypress/e2e/TestCase/ParaBankRegistration.cy.js,cypress/e2e/TestCase/ParabankRegistrationFaker.cy.js' --browser chrome --headed",

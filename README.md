@@ -1,0 +1,33 @@
+📚 Table of Contents
+- 📥[Installation](#installation)
+-🚀 [Running the Tests](#running-the-tests)
+  - ⚙️[Headless Mode](#headless-mode)
+  - 🖥️[Headed Mode](#headed-mode)
+- ✨[Features](#features)
+- 📥[Installation](#installation)
+- Run the following on the terminal `git clone https://github.com/joe-b-reaker/CypressProjects.git`
+- 🚀 [Running the Tests](#running-the-tests)
+- On the terminal, use npx cypress open then navigate to ...../e2e to run specific test scripts for more specfics scripts, run the following
+  - ⚙️[Headless Mode](#headless-mode)
+  - npx cypress run <script>
+  -Following are headless scripts:
+  -parabank-suite-headless -🧪 Runs basic Parabank functionality tests
+  -parabank-all-headless -🧾 Runs all test suites related to Parabank
+  -parabank-pom-commands-headless <<<<--- 🏆 Covers all features with Page Object Model and custom commands; use this script to test
+  - ⚙️[Headed Mode](#headed-mode)
+  - npx cypress run <script>
+  -orange-live-suite -🍊 Tests Orange Live application
+  -parabank-suite-headless -🧪 Basic Parabank functionality
+  -parabank-all-headless -🧾 All Parabank test suites
+  -parabank-pom-commands-headless <<<<---🏆 Full feature test with POM + commands
+- ✨ [Features](#features)
+- The Following Features are Tested by the Test Script
+- 🔓 a. Open New Account
+- 📝 b. Update Contact Info
+- 🚪 c. Logout
+==================
+- 💳 d. Accounts Overview
+- 💸 e. Transfer Funds
+- 🧾 f. Bills Payment
+- 🔍 g. Find Transactions
+- 🏦 h. Request Loan

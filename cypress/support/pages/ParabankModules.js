@@ -1,5 +1,8 @@
 class ParabankModules{
-   
+        //Login
+        loginText= '#loginPanel > form > div:nth-child(2) > input';
+        loginPasswordText = '#loginPanel > form > div:nth-child(4) > input';
+        loginButton = '#loginPanel > form > div:nth-child(5) > input';
         //Registration Page Modules
 
         //entry fields
@@ -47,8 +50,106 @@ class ParabankModules{
         //buttons
         updateProfileButton = 'input[value="Update Profile"]';
         
+        //Accounts Overview
 
-   
+        //entry fields
+
+        //drop-down menus
+
+        //labels
+        balanceLabel = '#accountTable > tbody > tr:nth-child(1) > td:nth-child(2)';
+        availableAmount = '#accountTable > tbody > tr:nth-child(1) > td:nth-child(3)';
+        totalBalance = '#accountTable > tbody > tr:nth-child(2) > td:nth-child(2) > b';
+
+        //links
+        accountLink = ' #accountTable > tbody > tr:nth-child(1) > td:nth-child(1) > a';
+        
+        //Transfer Funds 
+
+        //entry fields
+        amountText  = 'input[id="amount"]';
+
+        //drop-down menus
+        accountfromIdDropdown  = 'select[id="fromAccountId"]';
+        accounttoIdDropdown  = 'select[id="toAccountId"]';
+
+        //labels
+        messageLabel = '#showResult > h1';
+        amountLabel = '#amountResult';
+        accountfromLabel = '#fromAccountIdResult'; 
+        accounttoLabel = '#toAccountIdResult';
+
+        //buttons 
+        transferButton = 'input[value="Transfer"]';
+        //links
+
+        //Bills Payment
+
+        //entry fields
+        namePayeeText = 'input[name="payee.name"]';
+        streetPayeeText = 'input[name="payee.address.street"]';
+        cityPayeeText = 'input[name="payee.address.city"]';
+        statePayeeText = 'input[name="payee.address.state"]';
+        zipCodePayeeText  = 'input[name="payee.address.zipCode"]';
+        phoneNumberPayeeText  = 'input[name="payee.phoneNumber"]';
+         accountNoText = 'input[name="payee.accountNumber"]';  
+         verifyaccountNoText = 'input[name="verifyAccount"]';
+         billamountText = 'input[name="amount"]';
+        //drop-down menus
+         fromaccountDropdown  = 'select[name="fromAccountId"]';
+        //labels
+         billpayResultLabel = '#billpayResult > h1'; 
+         payeeNameLabel  = '#payeeName';
+         billamountLabel = '#amount';
+         fromaccountLabel = '#fromAccountId';
+        //buttons 
+        sendPaymentButton = 'input[value="Send Payment"]'
+        //links
+
+        //Request Loan 
+
+        //entry fields
+        downPaymentText  = 'input[id="downPayment"]';
+        //drop-down
+
+        //buttons
+
+        applyNowButton = 'input[value="Apply Now"]';
+
+        //labels 
+
+         //<td id="loanProviderName" width="75%">Wealth Securities Dynamic Loans (WSDL)</td>
+         loanResultLabel = '#requestLoanResult > h1';
+         loanProviderLabel='#loanProviderName';
+         responseDateLabel='#responseDate';
+         statusLabel ='#loanStatus';
+         loanError='#loanRequestDenied > .error';
+         //Congratulations, your loan has been approved.
+        //links
+        newAccountId = '#newAccountId';
+        
+        //Find Transactions 
+
+        //text field
+        transactionIdText = 'input[id="transactionId"]';
+        transactionDateText = 'input[id="transactionDate"]';
+        transactionfromDateText = 'input[id="fromDate"]';
+        transactiontoDateText = 'input[id="toDate"]';
+        //dropdown
+        selectAccountId = '#accountId';
+        //labels
+        transactionIdErrorLabel = 'span[id="transactionIdError"]';
+        
+        //button
+        findByIdButton = 'input[id="findById"]';
+        findByDateButton ='input[id="findByDate"]';
+        findByDateRangeButton ='input[id="findByDateRange"]';
+        findByAmountRange = 'input[id="findByAmount"]';
+
+        
+        //link
+        
+
 
  clearEntryFields(){
     cy.get(this.firstNameText).clear();

@@ -96,4 +96,5 @@ Cypress.Commands.add('logOut',() =>{
         cy.title().should('eq', 'ParaBank | Welcome | Online Banking');
 }
 
+
 )

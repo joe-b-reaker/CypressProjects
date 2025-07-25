@@ -250,7 +250,7 @@ describe('Swagger - Petstore API Test Cases', () => {
      });
   });
  
-    it.only('User cannot login using GET request without a password',() =>{
+    it('User cannot login using GET request without a password',() =>{
     cy.request({
                 method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/login?username=jayala',

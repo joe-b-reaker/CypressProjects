@@ -50,7 +50,24 @@ describe('Swagger - Petstore API Test Cases', () => {
             expect(response.body).to.have.property('type', 'error');
             expect(response.body).to.have.property('code', 1);
      });
+    });
+ it('Cannot retrieve user data using GET request as username is passed thru the body',() =>{
+    cy.request({
+                    method: 'GET',
+            url: 'https://petstore.swagger.io/v2/user/%432;qwr',
+
+            failOnStatusCode: false
+        }).then((response) => {
+            cy.log(response);
+            expect(response.status).to.eq(404);
+            expect(response.headers['content-type']).to.include('application/json');
+            expect(response.body).to.have.property('type', 'error');
+            expect(response.body).to.have.property('code', 1);
+     });
   });
+
+
+
   it('Update user data using PUT request',()=>{
     cy.request({
                     method: 'PUT',
@@ -77,7 +94,7 @@ describe('Swagger - Petstore API Test Cases', () => {
      });
   });
 
-    it.only('Update user non-existing user data using PUT request',()=>{
+    it('Update user non-existing user data using PUT request',()=>{
     cy.request({
                     method: 'PUT',
             url: 'https://petstore.swagger.io/v2/user/&&jayala0990u404',
@@ -233,7 +250,7 @@ describe('Swagger - Petstore API Test Cases', () => {
      });
   });
  
-    it('User cannot login using GET request without a password',() =>{
+    it.only('User cannot login using GET request without a password',() =>{
     cy.request({
                 method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/login?username=jayala',

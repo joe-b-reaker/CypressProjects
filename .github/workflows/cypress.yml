@@ -25,5 +25,5 @@ jobs:
         with:
           install: true
           spec: |
-          cypress/e2e/TestCase/api/
+          cypress/e2e/TestCase/api/,
           cypress/e2e/TestCase/ParabankOpenNewAccountPOM.cy.js

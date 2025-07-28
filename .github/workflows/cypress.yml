@@ -23,4 +23,4 @@ jobs:
       - name: Run specific Cypress test
         uses: cypress-io/github-action@v6
         with:
-          spec: TestCase/parabankOpenNewAccount.cy.js
+          spec: cypress/e2e/TestCase/parabankOpenNewAccount.cy.js

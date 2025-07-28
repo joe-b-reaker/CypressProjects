@@ -24,4 +24,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: true
-          spec: CypressProjects/cypress/e2e/TestCase/ParabankOpenNewAccountPOM.cy.js
+          spec: cypress/e2e/TestCase/ParabankOpenNewAccountPOM.cy.js

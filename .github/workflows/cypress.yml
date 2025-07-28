@@ -20,5 +20,7 @@ jobs:
         with:
           node-version: 20
           
-      - name: Run Cypress tests
+      - name: Run specific Cypress test
         uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/ParabankModules/parabankOpenNewAccount.cy.js

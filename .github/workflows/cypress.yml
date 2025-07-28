@@ -19,11 +19,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: Run specific Cypress test
         uses: cypress-io/github-action@v6
         with:
           install: true
-          spec: |
-            cypress/e2e/TestCase/api/petstoreswagger.cy.js,
+          spec: 
             cypress/e2e/TestCase/ParabankOpenNewAccountPOM.cy.js

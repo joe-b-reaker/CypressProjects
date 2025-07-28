@@ -19,12 +19,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Install dependencies
-        run: npm install --no-progress
-
-      - name: Verify Cypress install
-        run: npx cypress verify
-
+          
       - name: Run Cypress tests
-        run: npx cypress run
+        uses: cypress-io/github-action@v6

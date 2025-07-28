@@ -24,4 +24,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: true
-          spec: cypress/e2e/TestCase/parabankOpenNewAccount.cy.js
+          spec: CypressProjects/tree/main/cypress/e2e/TestCase/ParabankOpenNewAccount.cy.js

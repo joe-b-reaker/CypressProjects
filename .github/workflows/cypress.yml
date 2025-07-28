@@ -10,20 +10,21 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
- 
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install Cypress
-        run: npx install cypress
- 
+
       - name: Install dependencies
-        run: npm install
- 
+        run: npm install --no-progress
+
+      - name: Verify Cypress install
+        run: npx cypress verify
+
       - name: Run Cypress tests
         run: npx cypress run

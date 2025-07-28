@@ -1,5 +1,5 @@
 
-name: Run Cypress Tests
+name: Run Cypress Tests for Petstore Swagger API
  
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 20
           
-      - name: Run specific Cypress test
+      - name: Run specific Cypress test - Petstore Swagger API
         uses: cypress-io/github-action@v6
         with:
           install: true

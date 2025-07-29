@@ -31,7 +31,7 @@ describe('Swagger - Petstore API Test Cases', () => {
             failOnStatusCode: false
         }).then((response) => {
             cy.log(response);
-            expect(response.status).to.be.oneOf([200,404]);
+            expect(response.status).to.eq(200);
             expect(response.headers['content-type']).to.include('application/json');
             expect(response.body).to.have.property('username', 'jayala');
             expect(response.body).to.have.property('id', 1);

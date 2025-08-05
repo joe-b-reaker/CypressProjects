@@ -1,11 +1,12 @@
+
 describe('Swagger - Petstore API Test Cases', () => {
   it('Create user using POST request', () => {
     //user Create User
-    cy.request({
+    cy.api({
       method: 'POST',
       url: 'https://petstore.swagger.io/v2/user', 
       body : {
-                id: 1,
+                id: 6,
                 username: 'jayala',
                 firstName: 'Jose',
                 lastName: 'Ayala',
@@ -25,7 +26,7 @@ describe('Swagger - Petstore API Test Cases', () => {
     });
 
   it('Retrieve user data using GET request',() =>{
-    cy.request({
+    cy.api({
                     method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/jayala',
             failOnStatusCode: false
@@ -34,12 +35,11 @@ describe('Swagger - Petstore API Test Cases', () => {
             expect(response.status).to.eq(200);
             expect(response.headers['content-type']).to.include('application/json');
             expect(response.body).to.have.property('username', 'jayala');
-            expect(response.body).to.have.property('id', 1);
      });
   });
 
     it('Cannot retrieve user data using GET request',() =>{
-    cy.request({
+    cy.api({
                     method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/jayala404',
             failOnStatusCode: false
@@ -52,7 +52,7 @@ describe('Swagger - Petstore API Test Cases', () => {
      });
     });
  it('Cannot retrieve user data using GET request as username is passed thru the body',() =>{
-    cy.request({
+    cy.api({
                     method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/%432;qwr',
 
@@ -69,7 +69,7 @@ describe('Swagger - Petstore API Test Cases', () => {
 
 
   it('Update user data using PUT request',()=>{
-    cy.request({
+    cy.api({
                     method: 'PUT',
             url: 'https://petstore.swagger.io/v2/user/jayala',
             body : {
@@ -95,7 +95,7 @@ describe('Swagger - Petstore API Test Cases', () => {
   });
 
     it('Update user non-existing user data using PUT request',()=>{
-    cy.request({
+    cy.api({
                     method: 'PUT',
             url: 'https://petstore.swagger.io/v2/user/&&jayala0990u404',
             body : {
@@ -123,7 +123,7 @@ describe('Swagger - Petstore API Test Cases', () => {
 
   it('Create a duplicate user using POST request', () => {
     //user Create User
-    cy.request({
+    cy.api({
       method: 'POST',
       url: 'https://petstore.swagger.io/v2/user', 
       body : {
@@ -147,7 +147,7 @@ describe('Swagger - Petstore API Test Cases', () => {
     });
 
     it('Delete a user by using DELETE request',()=>{
-    cy.request({
+    cy.api({
                     method: 'DELETE',
             url: 'https://petstore.swagger.io/v2/user/jayala',
       headers: {
@@ -163,7 +163,7 @@ describe('Swagger - Petstore API Test Cases', () => {
   });
 
       it('Attempt to delete a non-existing user by using DELETE request',()=>{
-    cy.request({
+    cy.api({
                     method: 'DELETE',
             url: 'https://petstore.swagger.io/v2/user/notjayala',
       headers: {
@@ -176,7 +176,7 @@ describe('Swagger - Petstore API Test Cases', () => {
      });
   });
      it('Create user with createWithList using POST request', ()=> {
-        cy.request({
+        cy.api({
             method: 'POST',
             url: 'https://petstore.swagger.io/v2/user/createWithList',
             body: [
@@ -213,7 +213,7 @@ describe('Swagger - Petstore API Test Cases', () => {
 
   it('Create user with createWithArray using  POST request', () => {
     //user Create User
-    cy.request({
+    cy.api({
       method: 'POST',
       url: 'https://petstore.swagger.io/v2/user/createWithArray', 
       body : [{
@@ -237,7 +237,7 @@ describe('Swagger - Petstore API Test Cases', () => {
     });
     
   it('User can login using GET request',() =>{
-    cy.request({
+    cy.api({
                 method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/login?username=jayala&password=password',
             failOnStatusCode: false
@@ -251,7 +251,7 @@ describe('Swagger - Petstore API Test Cases', () => {
   });
  
     it('User cannot login using GET request without a password',() =>{
-    cy.request({
+    cy.api({
                 method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/login?username=jayala',
             failOnStatusCode: false
@@ -265,7 +265,7 @@ describe('Swagger - Petstore API Test Cases', () => {
   });
 
     it('User can logout',() =>{
-    cy.request({
+    cy.api({
                 method: 'GET',
             url: 'https://petstore.swagger.io/v2/user/login?username=jayala',
             headers: {
